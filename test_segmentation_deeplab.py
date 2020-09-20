@@ -167,7 +167,7 @@ for i in range(0,len(list_im)):
 
 	seg=cv2.resize(seg.astype(np.uint8),image.size)
 
-	mask_sel=(seg==15).astype(np.float32)
+	mask_sel=(seg==12).astype(np.float32)
 
 
 	name=list_im[i].replace('img','masksDL')
