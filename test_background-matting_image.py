@@ -194,6 +194,7 @@ for i in range(0,len(test_imgs)):
 		cv2.imwrite(result_path+'/'+filename.replace('_img','_compose'), cv2.cvtColor(comp_im_tr1,cv2.COLOR_BGR2RGB)) # result compose (H, W, 3)
 		cv2.imwrite(result_path+'/'+filename.replace('_img','_matte').format(i), cv2.cvtColor(comp_im_tr2,cv2.COLOR_BGR2RGB)) # result matte (H, W, 3)
 	except:
+		R0=bgr_img.shape[0];C0=bgr_img.shape[1]
 		back_img10=cv2.resize(back_img10,(C0,R0)); back_img20=cv2.resize(back_img20,(C0,R0))
 		alpha_temp = np.zeros((bgr_img.shape[0], bgr_img.shape[1]))
 		comp_im_tr1=composite4(bgr_img,back_img10,alpha_temp)
